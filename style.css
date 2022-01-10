@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+:root {
+  --bg-primary: hsl(215, 51%, 70%);
+  --bg-secondary: hsl(178, 100%, 50%);
+
+  --main-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+}
+.title {
+  color: white;
+}
+
+.price {
+  color: var(--bg-secondary);
+}
+
+/*CSS reset*/
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+  background-color: var(--main-bg);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+p,
+pre,
+blockquote,
+figure,
+hr {
+  margin: 0;
+  padding: 0;
+  font-family: Outfit, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
+}
+
+p {
+  font-weight: 300;
+  font-size: 18px;
+  color: var(--bg-primary);
+}
+
+ul {
+  list-style: none;
+  color: var(--bg-primary);
+}
+
+input,
+textarea,
+select,
+button {
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+button {
+  border-radius: 0;
+  padding: 0.75em 1em;
+  background-color: transparent;
+}
+
+embed,
+iframe,
+img,
+object,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  margin-inline: auto; /*Margin on the left and right*/
+  width: min(90%, 70.5rem);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Project start*/
+.card {
+  width: 500px;
+  height: 600px;
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inner-container {
+  width: 85%;
+  height: 90%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.inner-container .image img {
+  border-radius: 0.5rem;
+}
+
+section h2 {
+  font-weight: 600;
+  color: white;
+  margin: 1rem 0;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+}
+
+ul li img {
+  margin-right: 0.5rem;
+}
+
+.author {
+  height: 12%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.author img {
+  width: 13%;
+  margin-right: 1rem;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+h2:hover,
+.author > p span:hover {
+  cursor: pointer;
+  color: var(--bg-secondary);
+}
+
+.image {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 255, 247, 0.5);
+  transition: opacity 230ms;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+@media all and (min-width: 768px) {
+  .card {
+    height: 800px;
+  }
+  p,
+  li,
+  h2 {
+    font-size: 1.5rem;
+  }
+  .author {
+    margin: 2rem 0;
+  }
+}
